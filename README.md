@@ -129,7 +129,14 @@ function moveDodgerLeft() {
   }
 }
 ```
+function moveDodgerRight() {
+  var rightNumbers = dodger.style.right.replace('px', '')
+  var right = parseInt(rightNumbers, 10)
 
+  if (right > 0) {
+    dodger.style.right = `${right - 1}px`
+  }
+}
 We're doing essentially the same as above, but we first ensure that the dodger's left edge has not gone past the left edge of its container. (Remember, position is relative to the container.)
 
 Let's wire this up
